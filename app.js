@@ -6,8 +6,10 @@ for (const btn of allBtn) {
         const price =  event.target.parentNode.childNodes[3].childNodes[1].innerText;
         const category = event.target.parentNode.childNodes[5].childNodes[1].innerText;
         
+        const firstLeftCount = getConvertedValue('left');
+
         const firstCartCount = getConvertedValue('cart');
-        if(firstCartCount + 1 > 6){
+        if( firstLeftCount - 1 < 0 || firstCartCount + 1 > 6){
             alert('Khatam');
             return;
         }
@@ -31,7 +33,8 @@ for (const btn of allBtn) {
         document.getElementById('left').innerText = leftCount - 1
 
 
-       
+        event.target.setAttribute('disabled', true);
+        event.target.parentNode.style.backgroundColor = 'gray'
 
 
 
