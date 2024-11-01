@@ -1,5 +1,115 @@
 const allBtn = document.getElementsByClassName('add-btn');
 
+
+let count = 0;
+for (const btn of allBtn) {
+    btn.addEventListener('click', function(event){
+
+        count += 1;
+
+        const budget = getIntValue('budget')
+
+
+        event.target.setAttribute('disabled', true);
+        event.target.parentNode.parentNode.style.backgroundColor = "gray";
+        const placeName = event.target.parentNode.childNodes[1].innerText;
+        const price = event.target.parentNode.childNodes[3].childNodes[1].innerText;
+
+        if(budget - parseInt(price) < 0){
+            alert('Taka Kamao');
+            return;
+        }
+
+        
+        setInnerText('budget', budget - parseInt(price))
+
+
+        const selectedPlaceContainer = document.getElementById('selected-place-container');
+        const li = document.createElement('li');
+        const p1 = document.createElement('p');
+        p1.innerText = placeName;
+        const p2 = document.createElement('p');
+        p2.innerText = price;
+
+        li.appendChild(p1);
+        li.appendChild(p2);
+
+        selectedPlaceContainer.appendChild(li);
+
+
+
+        setInnerText('cart-count', count)
+
+        totalCost('total-cost', price);
+
+        grandTotal('grand-total', price)
+
+    })
+}
+
+
+function grandTotal(category){
+     const convertedTotal = getIntValue('total-cost');
+
+    if(category === 'bus'){
+        setInnerText('grand-total', convertedTotal + 100) 
+    }
+    else if(category === 'train'){
+        setInnerText('grand-total', convertedTotal - 200)
+    }
+    else if(category === 'flight'){
+        setInnerText('grand-total', convertedTotal + 500)
+    }
+
+    else{
+    setInnerText('grand-total', convertedTotal)
+    }
+}
+
+function getIntValue(elementId){
+    const element = document.getElementById(elementId).innerText;
+    return parseInt(element);
+}
+
+
+function totalCost(elementId, value){
+    const element = document.getElementById(elementId).innerText;
+    document.getElementById(elementId).innerText = parseInt(element) + parseInt(value)
+}
+
+
+function setInnerText(elementId, value){
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* const allBtn = document.getElementsByClassName('add-btn');
+
 for (const btn of allBtn) {
     btn.addEventListener('click', function(event){
         const name = event.target.parentNode.childNodes[1].innerText
@@ -101,3 +211,4 @@ function getConvertedValue(id){
 
 
 
+ */
