@@ -1,4 +1,4 @@
-*{
+/* *{
     margin: 0px;
     padding: 0px;
 }
@@ -15,7 +15,7 @@
 }
 .banner-left{
     width:50%;
-   /* text-align: center; */
+  
 }
 
 .banner-img{
@@ -61,20 +61,20 @@ nav{
 }
 .content-area-cotainer{
     margin-top: 30px;
-    /* border: 1px solid rgb(247, 18, 18); */
+    
     padding: 10px;
     display: flex;
     justify-content: space-between;
 
 }
 .left-content{
-    /* border: 1px solid gray; */
+   
     width: 1000px !important;
     display: flex;
     flex-wrap: wrap;
 }
 .cart-container{
-    /* border: 1px solid rgb(88, 25, 235); */
+    
     width:400px;
 }
 .place-img{
@@ -86,7 +86,7 @@ nav{
     align-items: center;
     gap: 20px;
     padding: 10px;
-    /* border: 1px solid #ccc; */
+    
     width: 270px;
     box-shadow: 4px 4px 8px gray;
     border-radius:5px;
@@ -154,6 +154,7 @@ li{
     margin: auto;
 }
 
+ */
 
 
 
@@ -162,20 +163,7 @@ li{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* *{
+*{
     margin: 0px;
     padding: 0px;
 
@@ -186,6 +174,8 @@ li{
     display: flex;
     justify-content: space-around;
 }
+
+
 .price-color{
     color: rgb(255, 249, 249);
     font-weight: bold;
@@ -193,12 +183,10 @@ li{
 }
 .main-container{
     display: flex;
-
     margin: 2rem 0;
-  
-    gap: 5rem;
-
 }
+
+
 .players-container{
     width: 60%;
     display: flex;
@@ -256,4 +244,4 @@ input{
 }
 .padding{
     padding: 7px;
-} */
+}
